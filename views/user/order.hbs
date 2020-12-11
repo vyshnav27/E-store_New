@@ -1,0 +1,51 @@
+<section>
+    <div class="container">
+        <div class="headin mt-5" style="text-align: center;">
+            <h4> Order-History </h4>
+        </div>
+        <table class="table mt-5" style="width: 300px;">
+
+            <thead>
+                <tr>
+
+                    <th scope="col">Date</th>
+                    <th >Address</th>
+                    <th >City</th>
+                    <th >Phone</th>
+                    <th >Pincode</th>
+                    <th scope="col">Amount</th>
+
+                    <th scope="col">Payment</th>
+                    <th scope="col">status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                <tr>
+                    <td>{{this.date}}
+                    </td>
+                     <td>{{this.deliveryDetails.Address}}
+                    </td>
+                      <td>{{this.deliveryDetails.City}}
+                    </td>
+                    <td>{{this.deliveryDetails.Phone}}
+                    </td>
+                    <td>{{this.deliveryDetails.Pincode}}
+                    </td>
+                    <td>{{this.totalAmount}}
+                    </td>
+                    <td>{{this.paymentMethod}}
+                    </td>
+                    <td>{{this.status}}
+                    </td>
+                    <td>
+                        <a href="view-order-products/{{this._id}}" class="btn btn-primary">View</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+      
+
+    </div>
+</section>

@@ -1,0 +1,61 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<section>
+  
+
+  <div class="container mt-5 pb-5">
+
+    
+    <div class="row">
+
+      {{#each products}}
+      <div class="col-6 col-md-3 mt-2 mr-auto" data-role="recipe">
+        <div class="card" style="width:18rem;">
+          <img src="/product-images/{{this._id}}.jpg" class="card-img-top" style="height:300px;width:300px" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{this.Name}}</h5>
+            <h4 class="card-title">{{this.Price}} Rs</h4>
+
+            <button onclick="addToCart('{{this._id}}')" class="btn btn-info">Add to Cart</button>
+
+          </div>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+
+<script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  $(document).ready(function () {
+    $("#searchbox").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $('div[data-role="recipe"]').filter(function () {
+        $(this).toggle($(this).find('h5').text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>

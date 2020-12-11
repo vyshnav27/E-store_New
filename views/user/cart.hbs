@@ -1,0 +1,56 @@
+<section>
+    <div class="container" >
+        <table class="table mt-5" >
+            <thead>
+                <tr>
+
+                    <th scope="col">Item</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    
+                    <td><img style="height: 70px;height:70px;" src="/product-images/{{this.product._id}}.jpg" alt="Error"></td>
+                    <td>{{this.product.Name}}
+                    </td>
+                    <td>{{this.product.Price}}.Rs
+                    </td>
+                    <td>
+                        <button class="cart-item-count text-white bg-info mr-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user}}',-'1')">-</button>           <!-- sicnce its inside loop -->
+                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button class=" ml-3 cart-item-count mr-3 text-white bg-info" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user}}','1')" >+</button>     <!-- User id is passed since ajax does no seesion -->
+                    </td>
+                    <td>
+                        <button class="btn btn-danger text-white " onclick="deleteProduct('{{this._id}}','{{this.product._id}}')">Remove</button>                   <!--product and cart id is passed thrpugh ajax-->
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr><!--line-->
+        {{#if total}}
+        <div class="check-out float-right p-4">
+            <h3 class="ml-2">Total Rs.<span id="total">{{total}}</span></h3>
+             <a href="/place-order" class="btn btn-primary text-white " style="width: 195px;">Place Order</a>
+        </div>
+        {{/if}}
+
+         {{#if total1}}
+        <div class="check-out " style="text-align:center">
+            <h2>Ooops !!</h2>
+            <h2>There's no product in your cart</h2>
+            <a href="/" class="btn btn-primary">Shop Now</a>
+        </div>
+        {{/if}}
+
+    </div>
+</section>
+<script>
+    
+
+</script>

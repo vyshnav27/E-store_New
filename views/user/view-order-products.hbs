@@ -1,0 +1,29 @@
+<section>
+    
+    <div class="container mt-5">
+        <div class="headin mt-5" style="text-align: center;">
+            <h4> Products - Ordered </h4>
+        </div>
+        <div class="row">
+            {{#each products}}
+
+            <div class="col-md-3 p-3">
+                     <div class="card" style="width: 18rem;">
+                    <img src="/product-images/{{this.product._id}}.jpg"class="card-img-top" style="height:300px;width:300px" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>{{this.product.Name}}</b></h5>
+                        <hr>
+                        <h5 class="card-title"><b>Quantity: </b>{{this.quantity}}</b></h5>
+                        <hr>
+                         <h5 class="card-title"><b>Price: </b>{{this.product.Price}} Rs</h5>
+                        <hr>
+                        <p class="card-text"><b>Description:</b><br><br>&emsp;{{this.product.Description}}</p>
+                       
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

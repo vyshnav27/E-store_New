@@ -1,0 +1,63 @@
+<section class="p-5 ml-5">
+    <div class="row">
+        <div class="place-order col-md-6 p-3">
+            <h2>Enter the Detials</h2>
+            <form action=""  id="check-out">
+
+                <div class="form-group" style="width:340px;">
+                    <label for="exampleFormControlTextarea1">Address</label>
+                    <textarea class="form-control" name="Address" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">City</label>
+                        <input type="text" name="City" class="form-control" id="inputCity" style="width:340px;">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputCity">Phone</label>
+                        <input type="text" name="Phone" class="form-control" id="inputCity" style="width:340px;">
+                    </div>
+                    <div class="form-group col-md-12" style="width: 270px;">
+                        <label for="inputZip">Pincode</label>
+                        <input type="text" name="Pincode" class="form-control" id="inputZip" style="width:340px;">
+                        <input type="text" name="userId" value="{{user._id}}" hidden>
+                    </div>
+                </div>
+
+
+        </div>
+
+
+        <div class="place-order col-md-6 mt-5 p-4">
+
+            <div class="choose_pay p-4 bg-light text-dark" style="border:1px solid black ; height:450px;width:500px; ">
+                <h4>Mode of payment: </h4>
+                <hr>
+
+                <div class="form-check mt-4">
+                    <input class="form-check-input" type="radio"  value="COD" name="Payment" id="exampleRadios1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        COD
+                    </label>
+                </div>
+
+                <div class="form-check mt-4">
+                    <input class="form-check-input" type="radio" value="ONLINE" name="Payment" id="exampleRadios2" 
+                        >
+                    <label class="form-check-label" for="exampleRadios2">
+                        ONLINE PAYMENT
+                    </label>
+                </div>
+                <hr>
+                <h4 class="mt-5" style="margin-left: 79px;">Total Amount: Rs {{total}}</h4>
+
+                <button type="submit" style="margin-left: 119px;width: 195px;"
+                    class="btn btn-success text-white mt-5">Proceed to buy</button>
+                     </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,24 @@
+<section>
+    <div class="container">
+        <div class="row">
+           <div class="col-md-6">
+               <h2 class="text-center mt-5 ml-auto ">Add Product</h2>
+               <form action="/admin/add-product" method ="post" enctype="multipart/form-data">
+                   <label for=""class="mt-2">Name</label>
+                   <input type="text" name="Name" class="form-control">
+                   <label for=""class="mt-2">Description</label>
+                   <input type="text" name="Description" class="form-control">
+                   <label for=""class="mt-2">Price</label>
+                   <input type="text" name="Price" class="form-control">
+                   <label for=""class="mt-2">Image</label>
+                   <input type="file" name="image" class="form-control">
+                   <button type="submit" class="btn btn-success mt-4">Add Item</button> 
+               </form>
+           </div> 
+        </div>
+    </div>
+</section>
+
+
+<!-- ENCTYPE is used since a fil is send to the server -->
+

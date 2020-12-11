@@ -1,0 +1,58 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand text-white" href="/">E-store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="/">Products <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="/cart">Cart<span class="badge badge-success" id="cart-count">{{cartCount}}</span> <span
+                            class="sr-only">(current)</span> </a>
+                           
+                </li>
+                
+                {{#if user}}
+                <li class="nav-item">
+
+                    <a class="nav-link text-white" href="/orders"> Oders<a>
+
+                </li>
+                
+                {{/if}}
+                <div class="serch">
+    
+  
+                            <input type="text" class="text-left ml-5" step="" name="searchbox" id="searchbox" class="p-1 ml-1 mt-4 " placeholder="Search your products">
+           </div>
+            </ul>
+
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" rol e="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{#if user}}
+                    {{user.Name}}
+                    {{else}}
+                    Account
+                    {{/if}}
+
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {{#if user}}
+                    <a class="dropdown-item" href="/logOut">LogOut</a>
+                    {{else}}
+                    <a class="dropdown-item" href="/login">LogIn</a>
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

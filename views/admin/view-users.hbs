@@ -1,0 +1,65 @@
+<section class="p-5">
+     <div class="headin mt-5" style="text-align: center;">
+            <h4> Users </h4>
+        </div>
+   
+<table class="table mt-5 p-5 ml-auto mr-auto" style="height: 300px;">
+   
+  <colgroup>
+    <col span="1" style="width:40% background-color:none">
+    <col span="1"style="width:30% background-color:none">
+    <col span="1"style="width:50% background-color:none">
+    <col span="1"style="width:70% background-color:none">
+  </colgroup>
+  <tr>
+     <th >S.no</th>
+      <th >Name</th>
+      <th >Email</th>
+      <th >Phone</th>
+  </tr>
+  {{#each users}}
+  <tr>
+    <td>{{@index}}</td>
+    <td>{{this.Name}}</td>
+    <td>{{this.email}}</td>
+    <td>{{this.Phone}}</td>
+      <td>
+      <a href="/admin/delete/{{this._id}}" class="btn btn-danger " onclick="return confirm('Are you sure to delete Device {{this.Name}}?')">Remove</a>
+      </td>
+  </tr>
+ 
+
+{{/each}}
+</table>
+
+  <!--  
+</section>
+
+    <table class="table mt-5 ml-auto mr-auto" style="height: 300px;width:190px; ">
+  <thead>
+      <colgroup>
+    <col span="1" style="background-color:red; width:80%">
+    <col span="2" style="background-color:yellow">
+  </colgroup>
+    <tr>
+      <th scope="col width-40%" colspan="1">S.no</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each users}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.Phone}}</td>
+     
+      <td>
+      <a href="/admin/delete/{{this._id}}" class="btn btn-danger " onclick="return confirm('Are you sure to delete Device {{this.Name}}?')">Remove</a>
+      </td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>-->
