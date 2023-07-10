@@ -1,8 +1,8 @@
-#E-Stores
+## E-Stores
 
 This is a clone of the popular Netflix application using reactJS.
 
-##Installation
+## Installation
 
 1. Clone the repository:
 
